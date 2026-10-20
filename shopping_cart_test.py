@@ -75,18 +75,17 @@ def execute_menu(menuOp, theCart):
 
         item = ItemToPurchase()
 
-        print("Enter the item name:")
+        print("Enter the item name:", end=" ")
         item.item_name = input()
 
-        print("Enter the item price:")
+        print("Enter the item price:", end=" ")
         item.item_price = float(input())
 
-        print("Enter the item quantity:")
+        print("Enter the item quantity:", end=" ")
         item.item_quantity = int(input())
-
+        print()
+        
         theCart.add_item(item)
-        
-        
 
 
     elif menuOp == 'r':
@@ -120,14 +119,16 @@ def execute_menu(menuOp, theCart):
 if __name__ == "__main__":
     menu_choice = ' '
         
-    cust_name = input("Enter customer's name:\n")
-    day_date = input("Enter today's date:\n")
+    print("Enter customer's name:", end=" ")
+    cust_name = input()
 
+    print("Enter today's date:", end=" ")
+    day_date = input()
     print()
+
     print(f"Customer name: {cust_name}")
     print(f"Today's date: {day_date}")
     print()
-
 
     my_cart = ShoppingCart(cust_name, day_date)
 
@@ -139,4 +140,3 @@ if __name__ == "__main__":
         if menu_choice in ['a', 'r', 'c', 'o']:
             execute_menu(menu_choice, my_cart)
             print_menu()
-
